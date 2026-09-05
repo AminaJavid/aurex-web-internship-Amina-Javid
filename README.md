@@ -31,7 +31,7 @@ The purpose of this project is to demonstrate understanding of HTML5 structure, 
 ## Project Structure
 
 ```text
-aurex-web-internship-your-name/
+aurex-web-internship-Amina Javid/
 │
 ├── index.html
 └── README.md
