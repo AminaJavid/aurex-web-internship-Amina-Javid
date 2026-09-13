@@ -14,9 +14,11 @@
 
 ### Personal Profile Webpage
 
-This project is a basic Personal Profile webpage developed as part of the AUREX Full-Stack Engineering Internship.
+This project is a semantic Personal Profile webpage developed as part of the AUREX Full-Stack Engineering Internship.
 
-The purpose of this project is to demonstrate understanding of HTML5 structure, semantic elements, headings, navigation, forms and accessibility.
+The webpage introduces the intern through structured sections including About Me, Skills, Education, Experience, Projects, and a Contact Form.
+
+The main objective is to demonstrate understanding of HTML5 structure, semantic elements, headings, navigation, forms, accessibility, and proper content organization.
 
 ---
 
@@ -31,7 +33,7 @@ The purpose of this project is to demonstrate understanding of HTML5 structure, 
 ## Project Structure
 
 ```text
-aurex-web-internship-Amina Javid/
+aurex-web-internship-Amina-Javid/
 │
 ├── index.html
 └── README.md
