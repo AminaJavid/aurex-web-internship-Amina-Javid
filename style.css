@@ -1,0 +1,642 @@
+/* =========================================================
+   AUREX WEEK 2 - PERSONAL PORTFOLIO
+   Modern Responsive Portfolio Design
+   ========================================================= */
+
+/* ---------- Global Reset ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #263238;
+    background:
+        radial-gradient(circle at 10% 10%, #e8e0ff 0, transparent 25%),
+        radial-gradient(circle at 90% 15%, #d9f4ff 0, transparent 25%),
+        linear-gradient(135deg, #f8f9ff, #eef7fb);
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER / HERO
+   ========================================================= */
+
+header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    padding: 95px 25px 85px;
+    background:
+        linear-gradient(135deg, #372b63, #5b4b8a 55%, #8c6fc4);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    top: -100px;
+    left: -80px;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    bottom: -170px;
+    right: -100px;
+}
+
+header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(2.4rem, 6vw, 4.3rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
+}
+
+header p {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 8px auto;
+    font-size: 1.05rem;
+    color: #f5f1ff;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+nav {
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+    width: min(1000px, 92%);
+    margin: -32px auto 0;
+    padding: 16px 22px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    box-shadow: 0 12px 35px rgba(55, 43, 99, 0.14);
+    backdrop-filter: blur(12px);
+}
+
+nav h2 {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+nav li {
+    display: flex;
+}
+
+nav a {
+    display: inline-block;
+    padding: 9px 17px;
+    border-radius: 25px;
+    color: #44366f;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+nav a:hover {
+    color: white;
+    background: linear-gradient(135deg, #6653a5, #8c6fc4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(102, 83, 165, 0.25);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+main {
+    width: min(1100px, 92%);
+    margin: 65px auto;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+section {
+    position: relative;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 45px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(55, 43, 99, 0.08);
+    overflow: hidden;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(140, 111, 196, 0.07);
+    right: -30px;
+    top: -30px;
+}
+
+section h2 {
+    position: relative;
+    color: #372b63;
+    font-size: 2rem;
+    margin-bottom: 22px;
+    padding-left: 17px;
+}
+
+section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 30px;
+    border-radius: 10px;
+    background: linear-gradient(#6653a5, #9a7bd3);
+}
+
+section h3 {
+    color: #58448a;
+    margin-bottom: 9px;
+}
+
+section p {
+    color: #58636d;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   ABOUT ME
+   ========================================================= */
+
+#about {
+    text-align: left;
+}
+
+#about h3 {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #f0ebff;
+    color: #5a458e;
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    list-style: none;
+    margin: 15px 0 28px;
+}
+
+#skills li {
+    position: relative;
+    padding: 15px 18px 15px 45px;
+    background: linear-gradient(135deg, #f8f5ff, #f2f9ff);
+    border: 1px solid #e7e1f6;
+    border-radius: 13px;
+    color: #4d5963;
+    font-weight: 600;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+#skills li::before {
+    content: "✦";
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8065b5;
+    font-size: 1.1rem;
+}
+
+#skills li:hover {
+    transform: translateY(-4px);
+    border-color: #b9a7df;
+    box-shadow: 0 10px 22px rgba(102, 83, 165, 0.12);
+}
+
+
+/* =========================================================
+   EDUCATION
+   ========================================================= */
+
+#education article {
+    position: relative;
+    margin-bottom: 18px;
+    padding: 23px 25px 23px 30px;
+    background: #faf9ff;
+    border: 1px solid #e8e2f4;
+    border-radius: 15px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#education article:hover {
+    transform: translateX(6px);
+    box-shadow: 0 9px 22px rgba(55, 43, 99, 0.09);
+}
+
+#education article:last-child {
+    margin-bottom: 0;
+}
+
+#education article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 4px;
+    border-radius: 10px;
+    background: linear-gradient(#6653a5, #b19bdb);
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+#experience article {
+    margin-bottom: 18px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f5ff, #f4fbff);
+    border: 1px solid #e4e5f2;
+    border-radius: 16px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#experience article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(55, 43, 99, 0.10);
+}
+
+#experience article:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PROJECTS - CSS GRID
+   ========================================================= */
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#projects h2 {
+    grid-column: 1 / -1;
+}
+
+#projects article {
+    position: relative;
+    padding: 28px;
+    min-height: 190px;
+    background: linear-gradient(145deg, #ffffff, #f7f4ff);
+    border: 1px solid #e5def3;
+    border-radius: 18px;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+#projects article::after {
+    content: "↗";
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #eee8fb;
+    color: #6653a5;
+    font-size: 1rem;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#projects article:hover {
+    transform: translateY(-8px);
+    border-color: #b9a7df;
+    box-shadow: 0 18px 35px rgba(55, 43, 99, 0.13);
+}
+
+#projects article:hover::after {
+    background: #6653a5;
+    color: white;
+    transform: rotate(10deg);
+}
+
+#projects article h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+#projects article p {
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+#contact {
+    background: linear-gradient(145deg, #ffffff, #f8f5ff);
+}
+
+form {
+    max-width: 720px;
+    margin-top: 25px;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #44366f;
+    font-weight: 700;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d9d3e7;
+    border-radius: 11px;
+    background: white;
+    color: #303842;
+    font: inherit;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8065b5;
+    box-shadow: 0 0 0 4px rgba(128, 101, 181, 0.12);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+button {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #55417f, #8065b5);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(85, 65, 127, 0.20);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #44336b, #7055a3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(85, 65, 127, 0.30);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+    padding: 38px 20px;
+    color: #eee9f8;
+    background: linear-gradient(135deg, #30264f, #49396e);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p:first-child {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 75px 20px 70px;
+    }
+
+    nav {
+        width: 94%;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.86rem;
+    }
+
+    main {
+        width: 94%;
+        margin: 50px auto;
+    }
+
+    section {
+        padding: 35px 28px;
+    }
+
+    #skills ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #projects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    header {
+        padding: 60px 18px 65px;
+    }
+
+    header h1 {
+        font-size: 2.35rem;
+    }
+
+    header p {
+        font-size: 0.94rem;
+    }
+
+    nav {
+        position: relative;
+        top: 0;
+        width: 94%;
+        margin: -25px auto 0;
+        border-radius: 20px;
+        padding: 14px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+        margin: 35px auto;
+    }
+
+    section {
+        padding: 27px 20px;
+        border-radius: 18px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 1.65rem;
+    }
+
+    #skills ul {
+        grid-template-columns: 1fr;
+    }
+
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    #projects h2 {
+        grid-column: auto;
+    }
+
+    #projects article {
+        min-height: auto;
+    }
+
+    input,
+    textarea {
+        padding: 13px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 22px 16px;
+    }
+
+    section h2 {
+        font-size: 1.45rem;
+    }
+}
